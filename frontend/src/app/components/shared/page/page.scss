@@ -1,0 +1,15 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 16rem;
+  padding: 1rem;
+  background-color: #18181b;
+}
+
+.content {
+  flex: 1;
+  padding: 1rem;
+}
