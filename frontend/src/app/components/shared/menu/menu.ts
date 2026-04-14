@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { MenuItem } from '../menu-item/menu-item';
 
 @Component({
   selector: 'app-menu',
-  imports: [],
+  imports: [MenuItem],
   templateUrl: './menu.html',
-  styleUrl: './menu.scss',
+  styleUrls: ['./menu.scss'],
 })
 export class Menu {}

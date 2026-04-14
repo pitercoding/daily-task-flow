@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
+import { Title } from '../../components/shared/title/title';
+
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [Title],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
