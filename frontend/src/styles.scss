@@ -3,3 +3,46 @@ body {
   color: #fff;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+.btn {
+  display: inline-flex;
+  gap: 1rem;
+  justify-content: center;
+  justify-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  text-decoration: none;
+  width: auto;
+  min-width: 8rem;
+}
+
+.btn-primary {
+  background-color: #a855f7;
+  color: #ffffff;
+
+  &:hover {
+    background-color: #9333ea;
+  }
+}
+
+.btn-secondary {
+  background-color: #71717a;
+  color: #ffffff;
+
+  &:hover {
+    background-color: #4b5563;
+  }
+}
+
+.btn-danger {
+  background-color: #ef4444;
+  color: #ffffff;
+
+  &:hover {
+    background-color: #dc2626;
+  }
+}

@@ -2,10 +2,32 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  align-items: flex-start;
+  width: 100%;
 
   &__content {
-    p {
-      line-height: 1.6;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+
+    span {
+      line-height: 1.2;
+      color: white;
+      font-size: 5rem;
+      font-weight: 800;
+      min-width: 6rem;
+      text-align: center;
+    }
+
+    .counter__buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+      width: 100%;
+      max-width: 40rem;
     }
   }
 }

@@ -1,10 +1,17 @@
 <div class="counter">
-  <app-title
-  mainTitle="Counter Lorem"
-  subTitle="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet..."
-  ></app-title>
-
+  <app-title mainTitle="Manual Counter" subTitle="A simple counter to manually track increments, decrements, and resets in your Daily Task Flow."></app-title>
   <div class="counter__content">
-    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+    <span>{{ count() }}</span>
+    <div class="counter__buttons">
+      <button (click)="increment()" class="btn btn-primary">
+        Increment
+      </button>
+      <button (click)="decrement()" class="btn btn-secondary">
+        Decrement
+      </button>
+      <button (click)="reset()" class="btn btn-danger">
+        Reset
+      </button>
+    </div>
   </div>
 </div>
