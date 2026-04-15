@@ -46,3 +46,25 @@ body {
     background-color: #dc2626;
   }
 }
+
+.input {
+  display: block;
+  width: 99%;
+  padding: 0.5rem 1rem;
+  border: 1px solid #27272a;
+  border-radius: 0.5rem;
+  background-color: #000;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+
+  &::placeholder {
+    color: #71717a;
+  }
+
+  &:focus {
+    border-color: #a855f7;
+  }
+}

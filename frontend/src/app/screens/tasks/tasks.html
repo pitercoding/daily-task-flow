@@ -1,10 +1,42 @@
-<div class="tasks">
-  <app-title
-  mainTitle="Tasks Lorem"
-  subTitle="Neque porro quisquam est..."
-  ></app-title>
+<div class="tasks__wrapper">
+  <app-title mainTitle="Task Manager" subTitle="Create, track, and manage your daily tasks with a simple and efficient workflow."></app-title>
 
-  <div class="counter__content">
-    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+  <div class="tasks__input-container">
+    <input type="text"
+      placeholder="Add new task"
+      class="input"
+      (keyup.enter)="addTask($event)"
+    >
+  </div>
+
+  <div class="tasks__list">
+    @for (item of tasksService.items(); track item.id) {
+      <div class="tasks__item">
+        <span class="tasks__title" [class.tasks__title--completed]="item.completed">{{ item.title }}</span>
+        <span class="tasks__badge">
+          {{ item.completed ? 'Completed' : 'Pending' }}
+        </span>
+        <div class="tasks__actions">
+          <button
+            (click)="tasksService.toggle(item.id)"
+            [class.tasks__btn--completed]="item.completed"
+            [class.tasks__btn--pending]="!item.completed"
+            class="btn"
+          >
+            <mat-icon fontSet="material-symbols-outlined">
+              {{ item.completed ? 'undo' : 'check_circle' }}
+            </mat-icon>
+          </button>
+          <button
+            (click)="tasksService.remove(item.id)"
+            class="btn btn-danger"
+          >
+            <mat-icon fontSet="material-symbols-outlined">
+              delete
+            </mat-icon>
+          </button>
+        </div>
+      </div>
+    }
   </div>
 </div>
