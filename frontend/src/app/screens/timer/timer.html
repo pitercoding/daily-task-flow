@@ -1,0 +1,33 @@
+<div class="timer">
+  <app-title mainTitle="Timer" subTitle="Track your time and stay focused on your tasks with a simple and continuous timer."></app-title>
+  <div class="timer__content">
+    <span class="timer__display" [class.timer__display--running]="isRunning()">{{ timerService.formattedTime() }}</span>
+
+    <div class="timer__status" *ngIf="isRunning() || timerService.seconds() > 0">
+      <span class="timer__status-text" [class.timer__status-text--running]="isRunning()">
+        {{ isRunning() ? 'Running' : 'Paused' }}
+      </span>
+    </div>
+
+    <div class="timer__buttons">
+      <button
+        (click)="timerService.start()"
+        class="btn btn-primary"
+        [disabled]="isRunning()"
+        [class.btn--disabled]="isRunning()">
+        Start
+      </button>
+      <button
+        (click)="timerService.pause()"
+        class="btn btn-secondary"
+        [disabled]="!isRunning()"
+        [class.btn--disabled]="!isRunning()">
+        Pause
+      </button>
+      <button (click)="timerService.reset()" class="btn btn-danger">
+        Reset
+      </button>
+    </div>
+  </div>
+</div>
+

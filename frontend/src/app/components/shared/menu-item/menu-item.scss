@@ -25,3 +25,17 @@
 :host(.sidebar__item) > li:active {
   transform: translateX(1px);
 }
+
+:host(.sidebar__item) > li.sidebar__item--active {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.2) 0%, rgba(0, 0, 0, 0.3) 100%);
+  border-left-color: #a855f7;
+  color: #ffffff !important;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(168, 85, 247, 0.15);
+  transform: translateX(4px);
+}
+
+:host(.sidebar__item) > li.sidebar__item--active:hover {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.25) 0%, rgba(0, 0, 0, 0.4) 100%);
+  transform: translateX(6px);
+}
