@@ -1,10 +1,51 @@
 <div class="home">
   <app-title
-  mainTitle="Home Lorem"
-  subTitle="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit."
+    mainTitle="Welcome!"
+    subTitle="Manage your daily tasks, track your progress, and stay productive with Daily Task Flow."
   ></app-title>
 
   <div class="home__content">
-    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+    <div class="home__stats">
+      <div class="stat">
+        <span class="stat__value">{{ tasksService.totalTasks() }}</span>
+        <span class="stat__label">Tasks Today</span>
+      </div>
+
+      <div class="stat">
+        <span class="stat__value">{{ tasksService.completedTasks() }}</span>
+        <span class="stat__label">Completed</span>
+      </div>
+
+      <div class="stat">
+        <span class="stat__value">{{ tasksService.pendingTasks() }}</span>
+        <span class="stat__label">Pending</span>
+      </div>
+    </div>
+
+    <div class="home__progress">
+      <h3>Progress</h3>
+      <div class="progress-bar">
+        <div class="progress-bar__fill" [style.width]="progress()">{{ progress() }}</div>
+      </div>
+    </div>
+
+    <div class="home__recent">
+      <h3>Recent Tasks</h3>
+
+      @for (item of recentTasks(); track item.id) {
+        <div class="task">
+          <span>{{ item.title }}</span>
+        </div>
+      }
+    </div>
+
+    <div class="home__quick-add">
+      <input type="text" placeholder="Add a new task..." (keyup.enter)="addTask($event)" />
+    </div>
+
+    <div class="home__actions">
+      <button routerLink="/tasks">Go to Tasks</button>
+      <button routerLink="/counter">Open Counter</button>
+    </div>
   </div>
 </div>

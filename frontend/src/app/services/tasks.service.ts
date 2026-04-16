@@ -1,4 +1,4 @@
-import { effect, Injectable, signal } from '@angular/core';
+import { computed, effect, Injectable, signal } from '@angular/core';
 import { Task } from '../models/task.model';
 
 @Injectable({
@@ -49,4 +49,10 @@ export class TasksService {
       ]);
     }
   }
+
+  totalTasks = computed(() => this.items().length);
+
+  completedTasks = computed(() => this.items().filter(t => t.completed).length);
+
+  pendingTasks = computed(() => this.items().filter(t => !t.completed).length);
 }
